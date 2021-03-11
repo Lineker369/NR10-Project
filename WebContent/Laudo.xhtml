@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+	
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Corpo do Laudo</title>
+</h:head>
+
+<body>
+	
+	<h:form>
+	
+	<table border="value" width="600" height="30" >
+	
+		<tr align="center"><td>
+		<p><b>LAUDO NR10</b></p>	
+		</td></tr>
+		
+	</table>	
+	<table border="value" width="600" height="50">
+			
+		<tr>
+			<td>
+				<b>CLIENTE:</b>
+				<h:outputText value="#{cadastro.cliente}"/>
+			</td>
+			<td>
+				<b>SETOR:</b>
+				<h:outputText value="#{cadastro.setor}"/>				
+			</td>
+		</tr>	
+
+	
+		<tr>
+			<td>	
+				<b>NOME DO QUADRO:</b>
+				<h:outputText value="#{cadastro.nome}"/>	
+			</td>	
+			<td>	
+				<b>DATA:</b>
+				<h:outputText value="#{cadastro.data}"/>				
+			</td>
+		</tr>	
+	
+		<tr ><td>		
+				<b>TÉCNICO RESPONSÁVEL:</b>
+				<h:outputText value="#{cadastro.tec}"/>			
+		</td></tr>	
+
+	</table>
+<hr/>	
+<p/>	
+
+<!-- _______________________________________________________________________ -->
+
+	<table border="value" width="600" height="50">
+		<tr align="center"><td>		
+		<b>TIPO DE QUADRO</b><br/>
+		</td></tr>	
+		
+		<tr align="center"><td>
+		<h:outputText value="#{lists.listaQuadro}"/>	
+	
+		</td></tr>		
+	</table>
+<hr/>		
+	
+<!-- _______________________________________________________________________ -->	
+	
+	<table border="value" width="600" height="50">
+		<tr align="center"><td>		
+		<b>FINALIDADE</b><br/>
+		</td></tr>	
+		
+		<tr align="center"><td>
+	<h:outputText value="#{lists.finalidade}"/>	
+ 
+		</td></tr>		
+	</table>
+<hr/>	
+
+<!-- _______________________________________________________________________ -->	
+
+	<table border="value" width="600" height="50">
+		<tr align="center"><td>		
+		<b>ENTRADA DE CABOS</b><br/>
+		</td></tr>	
+		
+		<tr align="center"><td>
+		<h:outputText value="#{lists.entrada}"/>	
+			
+		</td></tr>		
+	</table>
+<hr/>	
+<p/>
+
+<!-- _______________________________________________________________________ -->	
+
+	<table border="value" width="600" height="50">
+		<tr align="center"><td>
+		<b>VERIFICAÇÕES DE ÍTENS DE SEGURANÇA</b><br/>	
+		</td></tr>
+		
+	<tr><td>
+		PAINEL ATERRADO:
+		<h:outputText  rendered="#{lists.seguranca=='S'}" value="SIM"/>	
+		<h:outputText  rendered="#{lists.seguranca=='N'}" value="NÃO"/> 
+		<br/>
+
+    </td></tr>
+	
+	<tr><td>
+	
+		PROTEÇÃO INTERNA(CONTRA-PORTA):
+		<h:outputText value="#{lists.contra}"/>	
+		<br/>
+
+	</td></tr>	
+	
+	<tr><td>
+		DISPOSITIVO PARA TRAVAMENTO MECÂNICO:
+		<h:outputText value="#{lists.dispositivo}"/>	
+		<br/>
+
+	</td></tr>		
+	
+	<tr><td>
+		PORTA ATERRADA:
+		<h:outputText value="#{lists.portaaterrada}"/>	
+		<br/>
+		  
+	</td></tr>	
+	
+	<tr><td>
+		FICHA DE REGISTRO/ SERVIÇO/ AUTORIZAÇÃO:
+		<h:outputText value="#{lists.registro}"/>	
+		<br/>
+		
+	</td></tr>	
+	
+	<tr><td>
+		DIAGRAMA UNIFILAR/ PROJETOS:
+		<h:outputText value="#{lists.diagrama}"/>	
+		<br/>
+
+	</td></tr>	
+	
+	<tr><td>
+		IDENTIFICAÇÃO DO QUADRO:	
+		<h:outputText value="#{lists.identificacao}"/>	
+		<br/>
+
+	</td></tr>	
+	
+	<tr><td>
+		IDENTIFICAÇÃO DOS CIRCUITOS:
+		<h:outputText value="#{lists.circuito}"/>	
+		<br/>
+
+	</td></tr>		
+	
+	<tr><td>
+		ILUMINAÇÃO DE EMERGÊNCIA:	
+		<h:outputText value="#{lists.emergencia}"/>	
+		<br/>
+
+	</td></tr>		
+	
+	<tr><td>
+		ACESSIBILIDADE:	
+		<h:outputText value="#{lists.acessibilidade}"/>	
+		<br/>
+
+	</td></tr>		
+
+	<tr><td>
+		LIMPEZA:
+		<h:outputText value="#{lists.limpeza}"/>	
+		<br/>
+
+
+	</td></tr>		
+	</table>	
+<hr/>
+<br/>
+<!-- _______________________________________________________________________ -->	
+
+
+
+	
+	<h:commandButton value="BACK" action="formulario"/>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</h:form>
+
+</body>
+</html>

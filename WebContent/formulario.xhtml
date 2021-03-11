@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+
+
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>NR10 PROJECT</title>
+</h:head>
+
+<body>
+
+<h:form>
+
+
+<div id="dados">
+
+<!-- Cadastro do cliente -->
+	
+	<table align="center" border="value" width="600" height="30" >
+	
+		<tr align="center"><td>
+		<p><b>LAUDO NR10</b></p>	
+		</td></tr>
+		
+	</table>	
+	<table align="center" border="value" width="600" height="50">
+			
+		<tr >
+			<td>
+				<b>CLIENTE:</b>
+				<h:inputText value="#{cadastro.cliente}"/>	
+				<b>SETOR:</b>
+				<h:inputText value="#{cadastro.setor}"/>				
+			</td>
+		</tr>	
+		
+		<tr>
+			<td >	
+				<b>NOME DO QUADRO:</b>
+				<h:inputText value="#{cadastro.nome}"/>	
+				<b>DATA:</b>
+				<h:inputText value="#{cadastro.data}"/>				
+			</td>
+		</tr>	
+			
+		<tr ><td>		
+				<b>TÉCNICO RESPONSÁVEL:</b>
+				<h:inputText value="#{cadastro.tec}"/>			
+		</td></tr>	
+
+	</table>
+
+<p/>	
+	
+	
+<!-- Informações do quadro -->	
+	
+	<table align="center" border="value" width="600" height="50">
+		<tr align="center"><td>		
+		<b>TIPO DE QUADRO</b><br/>
+		</td></tr>	
+		
+		<tr align="center"><td>
+		<h:selectManyCheckbox value="#{lists.listaQuadro}">	
+			
+ 			<f:selectItem itemValue="ARMARIO"/>
+			<f:selectItem itemValue="SOBREPOR"/>
+			<f:selectItem itemValue="EMBUTIR" />
+			
+		</h:selectManyCheckbox>  	
+		</td></tr>		
+	</table>
+	
+	
+	<table align="center" border="value" width="600" height="50">
+		<tr align="center"><td>		
+		<b>FINALIDADE</b><br/>
+		</td></tr>	
+		
+		<tr align="center"><td>
+	<h:selectManyCheckbox value="#{lists.finalidade}">	
+			
+ 			<f:selectItem itemValue="ILUMINAÇÃO" itemLabel="ILUMINAÇÃO"/>
+			<f:selectItem itemValue="FORÇA" itemLabel="FORÇA"/>
+			<f:selectItem itemValue="COMANDO" itemLabel="COMANDO"/>
+			
+		</h:selectManyCheckbox>   	
+		</td></tr>		
+	</table>
+
+	
+	<table align="center" border="value" width="600" height="50">
+		<tr align="center"><td>		
+		<b>ENTRADA DE CABOS</b><br/>
+		</td></tr>	
+		
+		<tr align="center"><td>
+		<h:selectManyCheckbox value="#{lists.entrada}">	
+			
+ 			<f:selectItem itemValue="POR BAIXO" itemLabel="POR BAIXO"/>
+			<f:selectItem itemValue="POR CIMA" itemLabel="POR CIMA"/>
+			<f:selectItem itemValue="LATERAL" itemLabel="LATERAL"/>
+			
+		</h:selectManyCheckbox>   	
+		</td></tr>		
+	</table>
+	
+<p/>
+
+
+<!-- Ítens de segurança do quadro -->
+
+
+	<table align="center" border="value" width="600" height="50">
+		<tr align="center"><td>
+		<b>VERIFICAÇÕES DE ÍTENS DE SEGURANÇA</b><br/>	
+		</td></tr>
+		
+	<tr><td>
+		<h:selectManyCheckbox value="#{lists.seguranca}">	
+		<br/>
+
+			PAINEL ATERRADO:
+			<f:selectItem itemValue="S" itemLabel="SIM"/> 
+			<f:selectItem itemValue="N" itemLabel="NÃO"/>  
+		</h:selectManyCheckbox>  
+    </td></tr>
+	
+	<tr><td>
+	
+		<h:selectManyCheckbox value="#{lists.contra}">	
+		<br/>
+			PROTEÇÃO INTERNA(CONTRA-PORTA):
+			<f:selectItem itemValue="SIM" itemLabel="SIM"/> 
+			<f:selectItem itemValue="NÃO" itemLabel="NÃO"/>  
+		</h:selectManyCheckbox>  
+	</td></tr>	
+	
+	<tr><td>
+	
+		<h:selectManyCheckbox value="#{lists.dispositivo}">	
+		<br/>
+			DISPOSITIVO PARA TRAVAMENTO MECÂNICO:
+			<f:selectItem itemValue="SIM" itemLabel="SIM"/> 
+			<f:selectItem itemValue="NÃO" itemLabel="NÃO"/>  
+		</h:selectManyCheckbox>  
+	</td></tr>		
+	
+	<tr><td>
+	
+		<h:selectManyCheckbox value="#{lists.portaaterrada}">	
+		<br/>
+			PORTA ATERRADA:
+			<f:selectItem itemValue="SIM" itemLabel="SIM"/> 
+			<f:selectItem itemValue="NÃO" itemLabel="NÃO"/>  
+		</h:selectManyCheckbox>  
+	</td></tr>	
+	
+	<tr><td>
+	
+		<h:selectManyCheckbox value="#{lists.registro}">	
+		<br/>
+			FICHA DE REGISTRO/ SERVIÇO/ AUTORIZAÇÃO:
+			<f:selectItem itemValue="SIM" itemLabel="SIM"/> 
+			<f:selectItem itemValue="NÃO" itemLabel="NÃO"/>  
+		</h:selectManyCheckbox>  
+	</td></tr>	
+	
+	<tr><td>
+	
+		<h:selectManyCheckbox value="#{lists.diagrama}">	
+		<br/>
+			DIAGRAMA UNIFILAR/ PROJETOS:
+			<f:selectItem itemValue="SIM" itemLabel="SIM"/> 
+			<f:selectItem itemValue="NÃO" itemLabel="NÃO"/>  
+		</h:selectManyCheckbox>  
+	</td></tr>	
+	
+	<tr><td>
+	
+		<h:selectManyCheckbox value="#{lists.identificacao}">	
+		<br/>
+			IDENTIFICAÇÃO DO QUADRO:
+			<f:selectItem itemValue="SIM" itemLabel="SIM"/> 
+			<f:selectItem itemValue="NÃO" itemLabel="NÃO"/>  
+		</h:selectManyCheckbox>  
+	</td></tr>	
+	
+	<tr><td>
+	
+		<h:selectManyCheckbox value="#{lists.circuito}">	
+		<br/>
+			IDENTIFICAÇÃO DOS CIRCUITOS:
+			<f:selectItem itemValue="SIM" itemLabel="SIM"/> 
+			<f:selectItem itemValue="NÃO" itemLabel="NÃO"/>  
+		</h:selectManyCheckbox>  
+	</td></tr>		
+	
+	<tr><td>
+	
+		<h:selectManyCheckbox value="#{lists.emergencia}">	
+		<br/>
+			ILUMINAÇÃO DE EMERGÊNCIA:
+			<f:selectItem itemValue="SIM" itemLabel="SIM"/> 
+			<f:selectItem itemValue="NÃO" itemLabel="NÃO"/>  
+		</h:selectManyCheckbox>  
+	</td></tr>		
+	
+	<tr><td>
+	
+		<h:selectManyCheckbox value="#{lists.acessibilidade}">	
+		<br/>
+			ACESSIBILIDADE:
+			<f:selectItem itemValue="BOA" itemLabel="BOA"/> 
+			<f:selectItem itemValue="RUIM" itemLabel="RUIM"/>  
+		</h:selectManyCheckbox>  
+	</td></tr>		
+
+	<tr><td>
+	
+		<h:selectManyCheckbox value="#{lists.limpeza}">	
+		<br/>
+			LIMPEZA:
+			<f:selectItem itemValue="BOA" itemLabel="BOA"/> 
+			<f:selectItem itemValue="RUIM" itemLabel="RUIM"/>  
+			<f:selectItem itemValue="REGULAR" itemLabel="REGULAR"/> 			
+		</h:selectManyCheckbox>  
+	</td></tr>		
+	</table>	
+
+<br/>
+
+<!-- Características e conservação -->
+	
+	
+	<table align="center" border="value" width="600" height="50">
+	
+		<tr align="center"><td>		
+		<b>CARACTERÍSTICAS E CONSERVAÇÃO </b><br/>
+		</td></tr>	
+		
+	<tr><td>
+	
+		<h:selectManyCheckbox value="#{lists.protect}">	
+		<br/>
+			CABO ALIMENTADOR DIMENCIONADO:
+			<f:selectItem itemValue="1" itemLabel="SIM"/> 
+			<f:selectItem itemValue="2" itemLabel="NÃO"/>  
+		</h:selectManyCheckbox>  
+	</td></tr>						
+	
+	<tr><td>
+	
+		<h:selectManyCheckbox value="#{lists.protect}">	
+		<br/>
+			CABOS DE SAÍDA COORDENADOS COM A PROTEÇÃO:
+			<f:selectItem itemValue="1" itemLabel="SIM"/> 
+			<f:selectItem itemValue="2" itemLabel="NÃO"/>  
+		</h:selectManyCheckbox>  
+	</td></tr>	
+	
+	<tr><td>
+	
+		<h:selectManyCheckbox value="#{lists.protect}">	
+		<br/>
+			SECCIONADORA/ DJ. GERAL:
+			<f:selectItem itemValue="1" itemLabel="SECC"/> 
+			<f:selectItem itemValue="2" itemLabel="DISJ"/>  
+			<f:selectItem itemValue="3" itemLabel="OUTRO"/>			
+		</h:selectManyCheckbox>  
+	</td></tr>	
+	
+	<tr><td>
+	
+		<h:selectManyCheckbox value="#{lists.protect}">	
+		<br/>
+			SECCIONADORA/ DJ. PARCIAIS:
+			<f:selectItem itemValue="1" itemLabel="SECC"/> 
+			<f:selectItem itemValue="2" itemLabel="DISJ"/>  
+			<f:selectItem itemValue="3" itemLabel="OUTRO"/>
+		</h:selectManyCheckbox>  
+	</td></tr>	
+	
+	<tr><td>
+	
+		<h:selectManyCheckbox value="#{lists.protect}">	
+		<br/>
+			INTERLIGAÇÕES DIRETAS:
+			<f:selectItem itemValue="1" itemLabel="SIM"/> 
+			<f:selectItem itemValue="2" itemLabel="NÃO"/>  
+		</h:selectManyCheckbox>  
+	</td></tr>		
+	
+	<tr><td>
+	
+		<h:selectManyCheckbox value="#{lists.protect}">	
+		<br/>
+			AMPERÍMETRO:
+			<f:selectItem itemValue="1" itemLabel="SIM"/> 
+			<f:selectItem itemValue="2" itemLabel="NÃO"/>  
+		</h:selectManyCheckbox>  
+	</td></tr>		
+	
+	<tr><td>
+	
+		<h:selectManyCheckbox value="#{lists.protect}">	
+		<br/>
+			VOLTÍMETRO:
+			<f:selectItem itemValue="1" itemLabel="SIM"/> 
+			<f:selectItem itemValue="2" itemLabel="NÃO"/>  
+		</h:selectManyCheckbox>  
+	</td></tr>		
+
+	</table>
+
+<br/>	
+	
+	<table align="center" border="value" width="600" height="50">
+	
+		<tr align="center"><td>
+		<b>COMENTÁRIOS/OBSERVAÇÕES:</b><br/>			
+		</td></tr>
+	
+	<tr><td>
+		<h:inputTextarea value="#{cadastro.obs}" rows="7" cols="81"/>
+	</td></tr>
+	
+	</table>
+
+
+<br/>
+	
+	<table align="center" border="value" width="600" height="400">
+		<tr><td></td></tr>
+	
+	
+	</table>	
+</div>
+
+	<br/>
+		<h:commandButton value="SAVE"  onclick="funcao_pdf()"/>
+		<h:commandButton value="PHOTOGRAFY" action="Laudo2"/>
+
+	</h:form>
+
+
+</body>
+
+<script>
+	function funcao_pdf(){
+		
+		var pegar_dados = document.getElementById('dados').innerHTML;
+		var janela = window.open('','','width=800,heigth=600');
+		janela.document.write('<html><head>');
+		janela.document.write('<title>PDF</title></head>');
+		janela.document.write('<body>');
+		janela.document.write(pegar_dados);
+		janela.document.write('</body></html>');
+		janela.document.close();
+		janela.print(); 
+	}
+	
+</script>
+
+
+</html>	
+	
+	
+	
+	<!--   <h:panelGrid columns="4">
+			<f:facet name="header">
+				LAUDO NR10
+			</f:facet>
+			
+				CLIENTE:
+				<h:inputText value="#{cadastro.cliente}"/>
+				SETOR:
+				<h:inputText value="#{cadastro.setor}"/>
+				NOME DO QUADRO:
+				<h:inputText value="#{cadastro.nome}"/>
+				DATA:
+				<h:inputText value="#{cadastro.data}"/>
+				TÉCNICO RESPONSÁVEL:
+				<h:inputText value="#{cadastro.tec}"/>
+		
+		</h:panelGrid > 
+
+	  	<h:panelGrid> 
+
+			<f:facet name="header">
+				TIPO DE QUADRO
+			</f:facet>			
+		
+		<h:selectManyCheckbox value="#{lists.listaQuadro}">	
+			
+ 			<f:selectItem itemValue="1" itemLabel="ARMARIO"/>
+			<f:selectItem itemValue="2" itemLabel="SOBREPOR"/>
+			<f:selectItem itemValue="3" itemLabel="EMBUTIR"/>
+			
+		</h:selectManyCheckbox>  
+		
+	 	</h:panelGrid> 	
+
+
+	  	<h:panelGrid> 
+
+			<f:facet name="header">
+				FINALIDADE
+			</f:facet>			
+		
+		<h:selectManyCheckbox value="#{lists.finalidade}">	
+			
+ 			<f:selectItem itemValue="1" itemLabel="ILUMINAÇÃO"/>
+			<f:selectItem itemValue="2" itemLabel="FORÇA"/>
+			<f:selectItem itemValue="3" itemLabel="COMANDO"/>
+			
+		</h:selectManyCheckbox>  
+		
+	 	</h:panelGrid> 	
+
+
+	  	<h:panelGrid> 
+
+			<f:facet name="header">
+				ENTRADA DE CABOS
+			</f:facet>			
+		
+		<h:selectManyCheckbox value="#{lists.entrada}">	
+			
+ 			<f:selectItem itemValue="1" itemLabel="POR BAIXO"/>
+			<f:selectItem itemValue="2" itemLabel="POR CIMA"/>
+			<f:selectItem itemValue="3" itemLabel="LATERAL"/>
+			
+		</h:selectManyCheckbox>  
+		
+	 	</h:panelGrid> 	
+
+
+	  	<h:panelGrid columns="6"> 
+
+			<f:facet name="header">
+				ÍTENS DE SEGURANÇA
+			</f:facet>			
+		
+		<h:selectManyCheckbox value="#{lists.seguranca}">	
+		<br/>
+			PAINEL ATERRADO:
+			<f:selectItem itemValue="1" itemLabel="SIM"/> 
+			<f:selectItem itemValue="2" itemLabel="NÃO"/>  
+		</h:selectManyCheckbox>  
+		
+	 	</h:panelGrid> 		 -->
+	
+	
+	
+	
+	
+	
