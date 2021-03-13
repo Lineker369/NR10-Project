@@ -1,0 +1,53 @@
+@charset "ISO-8859-1";
+
+
+body{
+	
+	background-image: linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.05)10%),url(img/nasa.jpg);
+	background-size:cover;
+	
+}
+
+
+.tabela{
+	
+	background:white;
+	margin:100px 550px 100px 550px;
+	align-items:center;
+	padding:30px;
+	border-radius:10px;
+}
+
+.tab1{
+	
+	margin-top:3px;
+}
+
+.p1{
+	
+	margin-left:550px;
+	background-size:cover;	
+}
+
+
+
+.b1{
+	
+	padding:5px;
+}
+
+.b2{
+	
+	margin-left:20px;
+	padding:5px;
+} 
+
+.buttons{
+	
+	margin-left:30%;
+}
+
+
+
+	
+

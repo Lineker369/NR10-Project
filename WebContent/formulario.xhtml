@@ -10,19 +10,28 @@
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>NR10 PROJECT</title>
+<link type="text/css" rel="stylesheet" href="resources/css/styles.css"/>
+
 </h:head>
 
+
 <body>
+
+
 
 <h:form>
 
 
+
+
+<div class="tabela" >
 <div id="dados">
 
 <!-- Cadastro do cliente -->
+
+
 	
-	<table align="center" border="value" width="600" height="30" >
-	
+	<table align="center" border="value" width="600" height="30" class="tab1" >
 		<tr align="center"><td>
 		<p><b>LAUDO NR10</b></p>	
 		</td></tr>
@@ -340,13 +349,37 @@
 	
 	
 	</table>	
-</div>
+
 
 	<br/>
-		<h:commandButton value="SAVE"  onclick="funcao_pdf()"/>
-		<h:commandButton value="PHOTOGRAFY" action="Laudo2"/>
+
+	
+	
+	
+</div>	
+
+
+	<div class="buttons">
+		<h:commandButton value="SAVE"  onclick="funcao_pdf()" class="b1" />
+		<h:commandButton value="PHOTOGRAFY" action="Laudo2" class="b2"/>
+	</div>
+	
+
+<div class="p1">
+
+	<h:outputText value="Página:"/>
+	<h:outputText value="#{pagina.pagin}"/>
+</div>	
+	
+
+</div>
+
+
+
 
 	</h:form>
+	
+
 
 
 </body>
@@ -369,6 +402,9 @@
 
 
 </html>	
+	
+	
+	
 	
 	
 	

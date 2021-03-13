@@ -14,8 +14,6 @@ import javax.inject.Named;
 
 
 
-
-
 public class CadastroBean implements Serializable  {
 
 	
@@ -25,7 +23,7 @@ public class CadastroBean implements Serializable  {
 	private String tec;
 	private String data;
 	private String obs;
-	
+
 	
 	public String getCliente() {
 		return cliente;
@@ -63,6 +61,6 @@ public class CadastroBean implements Serializable  {
 	public void setObs(String obs) {
 		this.obs = obs;
 	}
-	
+		
 	
 }

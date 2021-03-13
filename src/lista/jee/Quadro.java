@@ -11,10 +11,6 @@ import javax.inject.Named;
 @Named("lists")
 @SessionScoped
 
-
-
-
-
 public class Quadro implements Serializable {
 
 
@@ -34,6 +30,8 @@ public class Quadro implements Serializable {
     private List<String> emergencia;
     private List<String> acessibilidade;
     private List<String> limpeza;
+
+
     
     
     
@@ -157,5 +155,7 @@ public class Quadro implements Serializable {
 		this.protect = protect;
 	}
 
+
+	
 	
 }
