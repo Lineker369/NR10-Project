@@ -2,14 +2,18 @@ package cadastro.jee;
 
 import java.io.Serializable;
 
-import javax.enterprise.context.RequestScoped;
+
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 
 
 
+
+
+
 @SuppressWarnings("serial")
-@RequestScoped
+@SessionScoped
 @Named("cadastro")
 
 
@@ -22,7 +26,10 @@ public class CadastroBean implements Serializable  {
 	private String nome;
 	private String tec;
 	private String data;
-	private String obs;
+	
+	
+	
+//	private Character nao = 'N';
 
 	
 	public String getCliente() {
@@ -55,12 +62,23 @@ public class CadastroBean implements Serializable  {
 	public void setData(String data) {
 		this.data = data;
 	}
-	public String getObs() {
-		return obs;
-	}
-	public void setObs(String obs) {
-		this.obs = obs;
-	}
+
+	
+	
+
+/*	public void Cad() {
+		
+		CadastroBean observ= new CadastroBean();
+		Quadro seg= new Quadro();		
+
+		
+		if(seg.getSeguranca()==nao) {
+			
+			this.setObs("Falta aterrar a porta");
+
+		}		
+		
+	}*/
 		
 	
 }

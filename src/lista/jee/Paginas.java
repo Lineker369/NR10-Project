@@ -6,14 +6,14 @@ import java.io.Serializable;
 
 
 import javax.enterprise.context.SessionScoped;
-import javax.faces.bean.ManagedBean;
+import javax.inject.Named;
 
 
 
 
 
-@SuppressWarnings({ "serial", "deprecation" })
-@ManagedBean(name="pagina")
+@SuppressWarnings({ "serial" })
+@Named("pagina")
 @SessionScoped
 
 
@@ -31,18 +31,16 @@ public Integer getPagin() {
 		return pagin;
 	}
 
-
-
 	public void setPagin(Integer pagin) {
 		this.pagin = pagin;
 	}
 
 
-public void pag() {
+/*public void pag() {
 	
 
 	
-}
+}*/
 
 
 	

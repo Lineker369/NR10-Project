@@ -8,29 +8,34 @@
 	
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Corpo do Laudo</title>
+<link type="text/css"	rel="stylesheet"	href="resources/css/styles.css"/>
+<title>Corpo do Laudo</title>			
 </h:head>
 
 <body>
 	
 	<h:form>
+
+<div class="tabela" >
+<div id="dados">	
 	
-	<table border="value" width="600" height="30" >
+	<table align="center" border="value" width="600" height="30"	class="tab1" >
 	
 		<tr align="center"><td>
 		<p><b>LAUDO NR10</b></p>	
 		</td></tr>
 		
 	</table>	
-	<table border="value" width="600" height="50">
+	<table align="center" border="value" width="600" height="50">
 			
 		<tr>
 			<td>
-				<b>CLIENTE:</b>
+				<b><h:outputText value="CLIENTE: "/></b>
 				<h:outputText value="#{cadastro.cliente}"/>
 			</td>
 			<td>
-				<b>SETOR:</b>
+				
+				<b><h:outputText value="SETOR: "/></b>
 				<h:outputText value="#{cadastro.setor}"/>				
 			</td>
 		</tr>	
@@ -38,27 +43,29 @@
 	
 		<tr>
 			<td>	
-				<b>NOME DO QUADRO:</b>
+				
+				<b><h:outputText value="NOME DO QUADRO: "/></b>
 				<h:outputText value="#{cadastro.nome}"/>	
 			</td>	
 			<td>	
-				<b>DATA:</b>
+				
+				<b><h:outputText value="DATA: "/></b>
 				<h:outputText value="#{cadastro.data}"/>				
 			</td>
 		</tr>	
 	
 		<tr ><td>		
-				<b>TÉCNICO RESPONSÁVEL:</b>
+			
+				<b><h:outputText value="TÉCNICO RESPONSÁVEL: "/></b>
 				<h:outputText value="#{cadastro.tec}"/>			
 		</td></tr>	
 
-	</table>
-<hr/>	
+	</table>	
 <p/>	
 
 <!-- _______________________________________________________________________ -->
 
-	<table border="value" width="600" height="50">
+	<table align="center" border="value" width="600" height="50">
 		<tr align="center"><td>		
 		<b>TIPO DE QUADRO</b><br/>
 		</td></tr>	
@@ -68,11 +75,11 @@
 	
 		</td></tr>		
 	</table>
-<hr/>		
+<p/>	
 	
 <!-- _______________________________________________________________________ -->	
 	
-	<table border="value" width="600" height="50">
+	<table align="center" border="value" width="600" height="50">
 		<tr align="center"><td>		
 		<b>FINALIDADE</b><br/>
 		</td></tr>	
@@ -82,11 +89,11 @@
  
 		</td></tr>		
 	</table>
-<hr/>	
+<p/>	
 
 <!-- _______________________________________________________________________ -->	
 
-	<table border="value" width="600" height="50">
+	<table align="center" border="value" width="600" height="50">
 		<tr align="center"><td>		
 		<b>ENTRADA DE CABOS</b><br/>
 		</td></tr>	
@@ -95,118 +102,241 @@
 		<h:outputText value="#{lists.entrada}"/>	
 			
 		</td></tr>		
-	</table>
-<hr/>	
+	</table>	
 <p/>
 
 <!-- _______________________________________________________________________ -->	
 
-	<table border="value" width="600" height="50">
+<table align="center" border="value" width="600" height="50">
 		<tr align="center"><td>
 		<b>VERIFICAÇÕES DE ÍTENS DE SEGURANÇA</b><br/>	
 		</td></tr>
 		
+		
 	<tr><td>
-		PAINEL ATERRADO:
-		<h:outputText  rendered="#{lists.seguranca=='S'}" value="SIM"/>	
-		<h:outputText  rendered="#{lists.seguranca=='N'}" value="NÃO"/> 
-		<br/>
+	<b><h:outputText value="PAINEL ATERRADO:	"/></b>
+		<h:outputText  value="	SIM" rendered="#{lists.seguranca=='S'}"/>	
+		<h:outputText  value="	NÃO" rendered="#{lists.seguranca=='N'}"/>
 
+
+		<br/>
     </td></tr>
 	
-	<tr><td>
 	
-		PROTEÇÃO INTERNA(CONTRA-PORTA):
-		<h:outputText value="#{lists.contra}"/>	
+	<tr><td>
+	<b><h:outputText value="PROTEÇÃO INTERNA(CONTRA-PORTA):	"/></b>
+		<h:outputText  value="	SIM" rendered="#{lists.contra=='S'}"/>	
+		<h:outputText  value="	NÃO" rendered="#{lists.contra=='N'}"/>		
 		<br/>
-
 	</td></tr>	
 	
+	
 	<tr><td>
-		DISPOSITIVO PARA TRAVAMENTO MECÂNICO:
-		<h:outputText value="#{lists.dispositivo}"/>	
+	<b><h:outputText value="DISPOSITIVO PARA TRAVAMENTO MECÂNICO:	"/>	</b>
+		<h:outputText  value="	SIM" rendered="#{lists.dispositivo=='S'}"/>	
+		<h:outputText  value="	NÃO" rendered="#{lists.dispositivo=='N'}"/>			
 		<br/>
-
 	</td></tr>		
 	
-	<tr><td>
-		PORTA ATERRADA:
-		<h:outputText value="#{lists.portaaterrada}"/>	
-		<br/>
-		  
-	</td></tr>	
 	
 	<tr><td>
-		FICHA DE REGISTRO/ SERVIÇO/ AUTORIZAÇÃO:
-		<h:outputText value="#{lists.registro}"/>	
-		<br/>
 		
+		<b><h:outputText value="PORTA ATERRADA:	"/>	</b>	
+		<h:outputText  value="	SIM" rendered="#{lists.portaaterrada=='S'}"/>	
+		<h:outputText  value="	NÃO" rendered="#{lists.portaaterrada=='N'}"/>				
+		<br/>	  
 	</td></tr>	
 	
-	<tr><td>
-		DIAGRAMA UNIFILAR/ PROJETOS:
-		<h:outputText value="#{lists.diagrama}"/>	
-		<br/>
-
-	</td></tr>	
 	
 	<tr><td>
-		IDENTIFICAÇÃO DO QUADRO:	
-		<h:outputText value="#{lists.identificacao}"/>	
+		
+	<b>	<h:outputText value="CABO ALIMENTADOR DIMENSIONADO:	" /></b>	
+		<h:outputText  value="	SIM" rendered="#{lists.cabo=='S'}"/>	
+		<h:outputText  value="	NÃO" rendered="#{lists.cabo=='N'}"/>		
 		<br/>
-
-	</td></tr>	
+    </td></tr>
+    
+    
+	<tr><td>
+ 		
+	<b>	<h:outputText value="CABOS DE SAÍDA COORDENADOS COM A PROTEÇÃO:	" /></b>
+		<h:outputText  value="	SIM" rendered="#{lists.protect=='S'}"/>	
+		<h:outputText  value="	NÃO" rendered="#{lists.protect=='N'}"/>			
+		<br/>
+    </td></tr>
+    
+    
+	<tr><td>
+ 		
+	<b>	<h:outputText value="INTERLIGAÇÕES DIRETAS:	" />	</b>
+		<h:outputText  value="	SIM" rendered="#{lists.interliga=='S'}"/>	
+		<h:outputText  value="	NÃO" rendered="#{lists.interliga=='N'}"/>			
+		<br/>
+    </td></tr>	
+	
 	
 	<tr><td>
-		IDENTIFICAÇÃO DOS CIRCUITOS:
-		<h:outputText value="#{lists.circuito}"/>	
+			
+	<b><h:outputText value="ILUMINAÇÃO DE EMERGÊNCIA:	"/>	</b>
+		<h:outputText  value="	SIM" rendered="#{lists.emergencia=='S'}"/>	
+		<h:outputText  value="	NÃO" rendered="#{lists.emergencia=='N'}"/>			
 		<br/>
-
 	</td></tr>		
 	
-	<tr><td>
-		ILUMINAÇÃO DE EMERGÊNCIA:	
-		<h:outputText value="#{lists.emergencia}"/>	
-		<br/>
+		
+</table>	
+<p/>
 
-	</td></tr>		
-	
-	<tr><td>
-		ACESSIBILIDADE:	
-		<h:outputText value="#{lists.acessibilidade}"/>	
-		<br/>
-
-	</td></tr>		
-
-	<tr><td>
-		LIMPEZA:
-		<h:outputText value="#{lists.limpeza}"/>	
-		<br/>
-
-
-	</td></tr>		
-	</table>	
-<hr/>
-<br/>
 <!-- _______________________________________________________________________ -->	
 
+<table align="center" border="value" width="600" height="50">
+		<tr align="center"><td>
+		<b>CARACTERÍSTICAS E CONSERVAÇÃO</b><br/>	
+		</td></tr>
+
+
+
+    
+ 	<tr><td>
+		
+	<b>	<h:outputText value="LIMPEZA:	"/></b>
+		<h:outputText  value="	BOA" rendered="#{lists.limpeza=='B'}"/>	
+		<h:outputText  value="	RUIM" rendered="#{lists.limpeza=='R'}"/>			
+		<h:outputText  value="	REGULAR" rendered="#{lists.limpeza=='G'}"/>		
+		<br/>
+	</td></tr>   
+    
+	<tr><td>
+		
+	<b>	<h:outputText value="FICHA DE REGISTRO/ SERVIÇO/ AUTORIZAÇÃO:	"/></b>
+		<h:outputText  value="	SIM" rendered="#{lists.registro=='S'}"/>	
+		<h:outputText  value="	NÃO" rendered="#{lists.registro=='N'}"/>			
+		<br/>
+	</td></tr>	
+	
+	
+	<tr><td>
+		
+	<b>	<h:outputText value="DIAGRAMA UNIFILAR/ PROJETOS:	"/></b>	
+		<h:outputText  value="	SIM" rendered="#{lists.diagrama=='S'}"/>	
+		<h:outputText  value="	NÃO" rendered="#{lists.diagrama=='N'}"/>	
+		<br/>
+	</td></tr>	
+	
+	
+	<tr><td>
+			
+	<b>	<h:outputText value="IDENTIFICAÇÃO DO QUADRO:	"/></b>
+		<h:outputText  value="	SIM" rendered="#{lists.identificacao=='S'}"/>	
+		<h:outputText  value="	NÃO" rendered="#{lists.identificacao=='N'}"/>			
+		<br/>
+	</td></tr>	
+	
+	
+	<tr><td>
+		
+	<b>	<h:outputText value="IDENTIFICAÇÃO DOS CIRCUITOS:	"/></b>
+		<h:outputText  value="	SIM" rendered="#{lists.circuito=='S'}"/>	
+		<h:outputText  value="	NÃO" rendered="#{lists.circuito=='N'}"/>			
+		<br/>
+	</td></tr>    
+	
+	
+	<tr><td>
+		
+	<b>	<h:outputText value="ACESSIBILIDADE:	"/>	</b>
+		<h:outputText  value="	BOA" rendered="#{lists.acessibilidade=='B'}"/>	
+		<h:outputText  value="	RUIM" rendered="#{lists.acessibilidade=='R'}"/>			
+		<h:outputText  value="	REGULAR" rendered="#{lists.acessibilidade=='G'}"/>			
+		<br/>
+	</td></tr>		
+    
+    
+</table>
+<br/>
+
+
+<!-- ________________________________________________________________________ -->
+
+<table	align="center" border="value" width="600" height="10">
+	<tr><td>
+	<!-- COMENTÁRIOS -->
+	<h:outputText value="falta aterramento do quadro, "	rendered="#{lists.seguranca=='N'}"/>
+	<h:outputText value="falta contra-porta de segurança, "	rendered="#{lists.contra=='N'}"/>
+	<h:outputText value="falta dispositivo de travamento da porta, " rendered="#{lists.dispositivo=='N'}"/>
+	<h:outputText value="falta aterramento da porta, " rendered="#{lists.portaaterrada=='N'}"/>
+	<h:outputText value="falta inserir ficha de registro de quem realizou os serviços, " rendered="#{lists.registro=='N'}"/>
+	<h:outputText value="falta inserir diagrama unifilar do painel, " rendered="#{lists.diagrama=='N'}"/>
+	<h:outputText value="falta identificação do painel, " rendered="#{lists.identificacao=='N'}"/>
+	<h:outputText value="falta identificação e mapeamento dos circuitos, " rendered="#{lists.circuito=='N'}"/>
+	<h:outputText value="recomenda-se a instalação de uma lampada de emergência próximo ao painel, " rendered="#{lists.emergencia=='N'}"/>
+	<h:outputText value="recomenda-se o deslocamento do painel para um lugar mais acessível, " rendered="#{lists.acessibilidade=='R'}"/>
+	<h:outputText value="recomenda-se a realização de uma limpeza geral no painel, " rendered="#{lists.limpeza=='R'}"/>
+	<h:outputText value="recomenda-se a troca do disjuntor para que haja eficácia na proteção do circuito, " rendered="#{lists.cabo=='N'}"/>
+	<h:outputText value="é necessario retirar as ligações diretas e conecta-las a algum tipo de proteção, " rendered="#{lists.interliga=='S'}"/>
+	<h:outputText value="#{lists.obs}"/>
+	</td></tr>
+</table>
+<br/>
+	
+	
+<!-- _________________________________________________________________________ -->	
+	
+	
+	<!-- Espaço para por a foto do painel!!! -->
+<tr	align="center"	cols="2" class="photo1">
+	<td >
+	<table align="left" border="value" width="300" height="300"	 >
+		<tr><td></td></tr>
+	</table>
+	
+	<table	align="right" border="value" width="300" height="300"	>
+		<tr><td></td></tr>
+	</table>
+	</td>
+</tr>
+
+<br/>	
+
+<div class="p1">
+	<h:outputText value="Página:"/>
+	<h:outputText value="#{pagina.pagin}"/>
+</div>	
+	
+	
+</div>	
+
+	
+<div	class="buttons">	
+	<h:commandButton value="SAVE" onclick="funcao_pdf()" class="b1"/>
+	<h:commandButton value="BACK" action="formulario"	class="b2"/>
+</div>	
+
+	
 
 
 	
-	<h:commandButton value="BACK" action="formulario"/>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+</div>	
 	
 	</h:form>
+	
+<script>
+	function funcao_pdf(){
+		
+		var pegar_dados = document.getElementById('dados').innerHTML;
+		var janela = window.open('','','width=800,heigth=600');
+		janela.document.write('<html><head>');
+		janela.document.write('<title>PDF</title></head>');
+		janela.document.write('<body>');
+		janela.document.write(pegar_dados);
+		janela.document.write('</body></html>');
+		janela.document.close();
+		janela.print(); 
+	}
+	
+</script>		
+	
 
 </body>
 </html>
